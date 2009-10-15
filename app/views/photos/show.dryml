@@ -1,0 +1,35 @@
+<show-page>
+<content:>
+<p>
+  <%= image_tag formatted_photo_path(@photo, :jpg) %>
+</p>
+
+
+<p>
+  <b>Image name:</b>
+  <%=h @photo.image_name %>
+</p>
+<p>
+  <b>Image filename:</b>
+  <%=h @photo.image_filename %>
+</p>
+<p>
+  <b>Image author:</b>
+  <%=h @photo.image_author %>
+</p>
+<p>
+  <b>Image width:</b>
+  <%=h @photo.image_width %>
+</p>
+
+<p>
+  <b>Image height:</b>
+  <%=h @photo.image_height %>
+</p>
+
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>
+
+</content:>
+</show-page>

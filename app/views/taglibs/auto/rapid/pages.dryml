@@ -1,0 +1,834 @@
+<!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
+
+<!-- ====== Main Navigation ====== -->
+
+<def tag="main-nav">
+  <navigation class="main-nav" merge-attrs param="default">
+    <nav-item href="#{base_url}/">Home</nav-item>
+    <nav-item with="&Photo">Photos</nav-item>
+    <nav-item with="&StoryStatus">Story Statuses</nav-item>
+  </navigation>
+</def>
+
+
+
+  
+<!-- ====== Photo Pages ====== -->
+
+
+<def tag="index-page" for="Photo">
+  <page merge title="Photos">
+    <body: class="index-page photo" param/>
+    
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">Photos</h2>
+
+        <p param="count" if>There <count prefix="are"/></p>
+      </header>
+      
+      <section param="content-body">
+
+        <a action="new" to="&model" param="new-link"/>      
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Photo">
+  <page merge title="New Photo">
+    <body: class="new-page photo" param/>
+    
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">New Photo</h2>
+      </section>
+      
+      <section param="content-body">
+        <form param>
+          <submit: label="Create Photo"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Photo">
+  <page merge title="Photo">
+
+    <body: class="show-page photo" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading"><name/></h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">Edit Photo</a>
+          </header>
+    
+          <section param="content-body">
+            <field-list fields="image_filename, image_width, image_height, image_name, image_author" param/>
+          </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Photo">
+  <page merge title="Edit Photo">
+
+    <body: class="edit-page photo" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">Edit <type-name/></h2>
+        <delete-button label="Remove This Photo" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+
+
+  
+<!-- ====== ProjectMembership Pages ====== -->
+
+
+<def tag="index-page" for="ProjectMembership">
+  <page merge title="Project Memberships">
+    <body: class="index-page project-membership" param/>
+    
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">Project Memberships</h2>
+
+        <p param="count" if>There <count prefix="are"/></p>
+      </header>
+      
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+        <div param="new-form">
+          <h3 param="new-form-heading">New Project Membership</h3>
+          <form with="&new_for_current_user ProjectMembership" param/>
+        </div>
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="ProjectMembership">
+  <page merge title="New Project Membership">
+    <body: class="new-page project-membership" param/>
+    
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">New Project Membership</h2>
+      </section>
+      
+      <section param="content-body">
+        <form param>
+          <submit: label="Create Project Membership"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="ProjectMembership">
+  <page merge title="Project Membership">
+
+    <body: class="show-page project-membership" param/>
+
+    <content: param>
+          <header param="content-header">
+            <a:project param="parent-link">&laquo; <name/></a:project>
+            <h2 param="heading"><name/></h2>
+
+            <record-flags fields="" param/>
+          </header>
+    
+          <section param="content-body">
+            <field-list fields="user" param/>
+          </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+<def tag="edit-page" for="ProjectMembership">
+  <page merge title="Edit Project Membership">
+
+    <body: class="edit-page project-membership" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">Edit <type-name/></h2>
+        <delete-button label="Remove This Project Membership" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+
+
+  
+<!-- ====== Project Pages ====== -->
+
+
+<def tag="index-page" for="Project">
+  <page merge title="Projects">
+    <body: class="index-page project" param/>
+    
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">Projects</h2>
+
+        <p param="count" if>There <count prefix="are"/></p>
+      </header>
+      
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Project">
+  <page merge title="New Project">
+    <body: class="new-page project" param/>
+    
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">New Project</h2>
+      </section>
+      
+      <section param="content-body">
+        <form param>
+          <submit: label="Create Project"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Project">
+  <page merge title="Project">
+
+    <body: class="show-page project" param/>
+
+    <content: param>
+      <section-group>
+        <section param="main-content">
+          <header param="content-header">
+            <h2 param="heading"><name/></h2>
+
+            <record-flags fields="" param/>
+
+            <a:owner param="creator-link"/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">Edit Project</a>
+          </header>
+    
+          <section param="content-body" with-flash-messages>
+            <section param="collection-section">
+              <h3 param="collection-heading">Stories</h3>
+              
+              <collection:stories param/>
+
+              <a:stories action="new" if="&can_create?(@project.stories)" param="new-link">New Story</a:stories>
+            </section>
+          </section>
+        </section>
+        
+        <aside param>
+          <section param="memberships-collection-section">
+            <h3 param="memberships-collection">Memberships</h3>
+            <collection:memberships/>
+          </section>
+        </aside>
+      </section-group>
+    </content:>
+    
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Project">
+  <page merge title="Edit Project">
+
+    <body: class="edit-page project" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">Edit <type-name/></h2>
+        <delete-button label="Remove This Project" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+
+<def tag="new-for-owner-page" polymorphic/>
+<def tag="new-for-owner-page" for="Project">
+  <page merge title="New Project for #{name :with => @owner}">
+    
+    <body: class="new-for-owner-page  project" param/>
+    
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">New Project</h2>
+        <h3 param="subheading">For: <a with="&@owner"/></h3>
+      </header>
+      
+      <section param="content-body">
+        <form owner="owner" method="post" param>
+          <field-list: skip="owner"/>
+          <submit: label="Create Project"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+
+
+  
+<!-- ====== Story Pages ====== -->
+
+
+<def tag="index-page" for="Story">
+  <page merge title="Stories">
+    <body: class="index-page story" param/>
+    
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">Stories</h2>
+
+        <p param="count" if>There <count prefix="are"/></p>
+      </header>
+      
+      <section param="content-body">
+
+        <a action="new" to="&model" param="new-link"/>      
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Story">
+  <page merge title="New Story">
+    <body: class="new-page story" param/>
+    
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">New Story</h2>
+      </section>
+      
+      <section param="content-body">
+        <form param>
+          <submit: label="Create Story"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Story">
+  <page merge title="Story">
+
+    <body: class="show-page story" param/>
+
+    <content: param>
+          <header param="content-header">
+            <a:project param="parent-link">&laquo; <name/></a:project>
+            <h2 param="heading"><name/></h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">Edit Story</a>
+          </header>
+    
+          <section param="content-body">
+            <view:body param="description"/>
+            <field-list fields="status" param/>
+            <section param="collection-section">
+              <h3 param="collection-heading">Tasks</h3>
+              
+              <sortable-collection:tasks param="collection"/>
+
+              <section param="add-to-collection" if="&can_create?(@story.tasks)">
+                <h3 param="add-form-heading">Add a Task</h3>
+                <form with="&@task || new_for_current_user(@story.tasks)" owner="story" without-cancel param>
+                  <field-list: skip="story"/>
+                  <submit: label="Add"/>
+                </form>
+              </section>
+            </section>
+          </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Story">
+  <page merge title="Edit Story">
+
+    <body: class="edit-page story" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">Edit <type-name/></h2>
+        <delete-button label="Remove This Story" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+
+<def tag="new-for-project-page" polymorphic/>
+<def tag="new-for-project-page" for="Story">
+  <page merge title="New Story for #{name :with => @project}">
+    
+    <body: class="new-for-owner-page  story" param/>
+    
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">New Story</h2>
+        <h3 param="subheading">For: <a with="&@project"/></h3>
+      </header>
+      
+      <section param="content-body">
+        <form owner="project" method="post" param>
+          <field-list: skip="project"/>
+          <submit: label="Create Story"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+
+
+  
+<!-- ====== StoryStatus Pages ====== -->
+
+
+<def tag="index-page" for="StoryStatus">
+  <page merge title="Story Statuses">
+    <body: class="index-page story-status" param/>
+    
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">Story Statuses</h2>
+
+        <p param="count" if>There <count prefix="are"/></p>
+      </header>
+      
+      <section param="content-body">
+
+        <a action="new" to="&model" param="new-link"/>      
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="StoryStatus">
+  <page merge title="New Story Status">
+    <body: class="new-page story-status" param/>
+    
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">New Story Status</h2>
+      </section>
+      
+      <section param="content-body">
+        <form param>
+          <submit: label="Create Story Status"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="StoryStatus">
+  <page merge title="Story Status">
+
+    <body: class="show-page story-status" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading"><name/></h2>
+
+            <record-flags fields="" param/>
+          </header>
+    
+          <section param="content-body">
+          </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+<def tag="edit-page" for="StoryStatus">
+  <page merge title="Edit Story Status">
+
+    <body: class="edit-page story-status" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">Edit <type-name/></h2>
+        <delete-button label="Remove This Story Status" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+
+
+  
+<!-- ====== Task Pages ====== -->
+
+
+<def tag="index-page" for="Task">
+  <page merge title="Tasks">
+    <body: class="index-page task" param/>
+    
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">Tasks</h2>
+
+        <p param="count" if>There <count prefix="are"/></p>
+      </header>
+      
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+        <div param="new-form">
+          <h3 param="new-form-heading">New Task</h3>
+          <form with="&new_for_current_user Task" param/>
+        </div>
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Task">
+  <page merge title="New Task">
+    <body: class="new-page task" param/>
+    
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">New Task</h2>
+      </section>
+      
+      <section param="content-body">
+        <form param>
+          <submit: label="Create Task"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Task">
+  <page merge title="Task">
+
+    <body: class="show-page task" param/>
+
+    <content: param>
+          <header param="content-header">
+            <a:story param="parent-link">&laquo; <name/></a:story>
+            <h2 param="heading"><name/></h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">Edit Task</a>
+          </header>
+    
+          <section param="content-body">
+            <view:description param="description"/>
+            <field-list fields="position" param/>
+            <section param="collection-section">
+              <h3 param="collection-heading">Task Assignments</h3>
+              
+              <collection:task_assignments param/>
+            </section>
+          </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Task">
+  <page merge title="Edit Task">
+
+    <body: class="edit-page task" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">Edit <type-name/></h2>
+        <delete-button label="Remove This Task" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+
+
+
+
+
+  
+<!-- ====== User Pages ====== -->
+
+
+<def tag="index-page" for="User">
+  <page merge title="Users">
+    <body: class="index-page user" param/>
+    
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">Users</h2>
+
+        <p param="count" if>There <count prefix="are"/></p>
+      </header>
+      
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="User">
+  <page merge title="New User">
+    <body: class="new-page user" param/>
+    
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">New User</h2>
+      </section>
+      
+      <section param="content-body">
+        <form param>
+          <submit: label="Create User"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="User">
+  <page merge title="User">
+
+    <body: class="show-page user" param/>
+
+    <content: param>
+      <section-group>
+        <section param="main-content">
+          <header param="content-header">
+            <h2 param="heading"><name/></h2>
+
+            <record-flags fields="administrator" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">Edit User</a>
+          </header>
+    
+          <section param="content-body" with-flash-messages>
+            <field-list fields="email_address" param/>
+            <section param="collection-section">
+              <h3 param="collection-heading"><Your/>Photos</h3>
+              
+              <collection:photos param/>
+            </section>
+          </section>
+        </section>
+        
+        <aside param>
+          <section param="project_memberships-collection-section">
+            <h3 param="project_memberships-collection">Project Memberships</h3>
+            <collection:project_memberships/>
+          </section>
+          <section param="task_assignments-collection-section">
+            <h3 param="task_assignments-collection">Task Assignments</h3>
+            <collection:task_assignments/>
+          </section>
+        </aside>
+      </section-group>
+    </content:>
+    
+  </page>
+</def>
+
+
+<def tag="edit-page" for="User">
+  <page merge title="Edit User">
+
+    <body: class="edit-page user" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">Edit <type-name/></h2>
+        <delete-button label="Remove This User" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+<def tag="signup-page" polymorphic/>
+<def tag="signup-page" for="User">
+
+  <page title="Signup" merge>
+
+    <body: class="lifecycle-start-page signup-page" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">Signup</h2>
+      </header>
+
+      <section param="content-body">
+        <signup-form param="form"/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+<def tag="reset-password-page" polymorphic/>
+<def tag="reset-password-page" for="User">
+  <page title="Reset Password" merge>
+    
+    <body: class="lifecycle-transition-page reset-password-page" param/>
+    
+    <content:>
+      <header param="content-header">
+        <h2 param="heading">Reset Password</h2>
+      </header>
+      
+      <section param="content-body">
+        <reset-password-form param="form"/>
+      </section>
+    </content:>
+    
+  </page>
+</def>
+
+

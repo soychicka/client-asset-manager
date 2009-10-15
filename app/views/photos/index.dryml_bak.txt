@@ -1,0 +1,7 @@
+<index-page>
+<collection: replace>
+    <div>
+      <repeat join=", "><a/></repeat>
+    </div>
+  </collection:>
+</index-page>

@@ -1,0 +1,6 @@
+# app/views/photos/show.jpg.flexi
+# Accessed via http://mysite.com/photos/123.jpg
+
+@photo.operate do |image|
+  image.resize '320x240'
+end

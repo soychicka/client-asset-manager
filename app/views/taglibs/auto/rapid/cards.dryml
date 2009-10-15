@@ -1,0 +1,88 @@
+<!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
+
+<def tag="card" for="Photo">
+  <card class="photo" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="Project">
+  <card class="project" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+    <body: param>
+      <a:owner param="creator-link"/>
+      <count:stories param/>
+    </body:>
+  </card>
+</def>
+
+<def tag="card" for="ProjectMembership">
+  <card class="project-membership" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+      <div param="actions">
+        <delete-button label="X" param/>
+      </div>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="Story">
+  <card class="story" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+    <body: param>
+      <count:tasks param/>
+    </body:>
+  </card>
+</def>
+
+<def tag="card" for="StoryStatus">
+  <card class="story-status" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+      <div param="actions">
+        <delete-button label="X" param/>
+      </div>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="Task">
+  <card class="task" param="default" merge>
+    <header: param>
+      <div param="actions">
+        <a action="edit" if="&can_edit?" param="edit-link">Edit</a>
+      </div>
+    </header:>
+    <body: param>
+      <view:description param="description"/>
+      <count:task_assignments param/>
+    </body:>
+  </card>
+</def>
+
+<def tag="card" for="TaskAssignment">
+  <card class="task-assignment" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="User">
+  <card class="user" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+    <body: param>
+      <count:photos param/>
+    </body:>
+  </card>
+</def>
+

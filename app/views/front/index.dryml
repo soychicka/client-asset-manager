@@ -1,0 +1,25 @@
+<page title="Home">
+
+  <body: class="front-page"/>
+
+  <content:>
+    <header class="content-header">
+      <h1>Welcome to <app-name/></h1>
+      <section class="welcome-message">
+        <h3>Congratulations! Your Hobo Rails App is up and running</h3>
+        <ul>
+          <li>To customise this page: edit app/views/front/index.dryml</li>
+        </ul>
+      </section>
+    </header>
+
+ <section with="&current_user" class="content-body" if="&logged_in?">	<h3>Your projects</h3>
+<collection:projects><card without-creator-link/></collection>
+      <a:projects action="new">New Project</a>
+      <h3>Projects you have joined</h3>
+      <collection:joined-projects><card without-creator-link/></collection>
+
+    </section>
+  </content:>
+  
+</page>
